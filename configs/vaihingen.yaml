@@ -1,0 +1,83 @@
+# Vaihingen Dataset Configuration
+
+# Dataset
+dataset: vaihingen
+data_root: ./data/vaihingen
+num_classes: 6
+class_names:
+  - Impervious surfaces
+  - Building
+  - Low vegetation
+  - Tree
+  - Car
+  - Clutter
+
+# Modalities
+modalities:
+  - rgb  # IRRG (3 channels)
+  - dsm  # DSM (1 channel)
+
+# Model Architecture
+model:
+  embed_dim: 256
+  num_heads: 8
+  patch_size: 4
+  dropout: 0.1
+
+# Training
+training:
+  batch_size: 8
+  num_epochs: 200
+  learning_rate: 0.0001
+  weight_decay: 0.01
+  optimizer: AdamW
+  scheduler: CosineAnnealingLR
+  warmup_epochs: 10
+  
+# Data Augmentation
+augmentation:
+  random_flip: true
+  random_rotation: true
+  rotation_degrees: 15
+  color_jitter: true
+  brightness: 0.2
+  contrast: 0.2
+  saturation: 0.2
+
+# Loss Function
+loss:
+  type: combined  # cross_entropy + dice
+  ce_weight: 0.5
+  dice_weight: 0.5
+  class_weights: null  # Auto-compute or specify
+
+# Checkpointing
+checkpoint:
+  save_dir: ./checkpoints
+  save_freq: 10
+  save_best: true
+  monitor: val_miou
+  mode: max
+
+# Logging
+logging:
+  log_dir: ./logs
+  tensorboard: true
+  log_freq: 10
+
+# Evaluation
+evaluation:
+  metrics:
+    - overall_accuracy
+    - mean_iou
+    - f1_score
+    - kappa
+    - per_class_iou
+  save_predictions: true
+  save_visualizations: false
+
+# Hardware
+hardware:
+  num_workers: 4
+  pin_memory: true
+  mixed_precision: true

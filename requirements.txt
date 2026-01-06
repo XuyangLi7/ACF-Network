@@ -1,0 +1,44 @@
+# ACF Network - Python Dependencies
+
+# Core Deep Learning
+torch>=1.10.0
+torchvision>=0.11.0
+torchaudio>=0.10.0
+
+# Data Processing
+numpy>=1.21.0
+pandas>=1.3.0
+scipy>=1.7.0
+scikit-learn>=1.0.0
+
+# Image Processing
+opencv-python>=4.5.0
+Pillow>=8.3.0
+imageio>=2.9.0
+
+# Remote Sensing Data
+rasterio>=1.2.0
+gdal>=3.3.0
+spectral>=0.22.0
+
+# Visualization
+matplotlib>=3.4.0
+seaborn>=0.11.0
+
+# Configuration
+pyyaml>=5.4.0
+omegaconf>=2.1.0
+
+# Utilities
+tqdm>=4.62.0
+tensorboard>=2.7.0
+einops>=0.4.0
+
+# Metrics
+torchmetrics>=0.6.0
+
+# Optional: Mixed Precision Training
+# apex (install separately from NVIDIA)
+
+# Optional: Distributed Training
+# horovod>=0.23.0

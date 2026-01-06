@@ -1,0 +1,54 @@
+# Trento Dataset Configuration
+
+# Dataset
+dataset: trento
+data_root: ./data/trento
+num_classes: 6
+
+# Modalities
+modalities:
+  - hsi    # Hyperspectral (63 channels)
+  - lidar  # LiDAR (1 channel)
+
+# Model Architecture
+model:
+  embed_dim: 256
+  num_heads: 8
+  patch_size: 4
+  dropout: 0.1
+
+# Training
+training:
+  batch_size: 8
+  num_epochs: 200
+  learning_rate: 0.0001
+  weight_decay: 0.01
+  optimizer: AdamW
+  scheduler: CosineAnnealingLR
+  warmup_epochs: 10
+
+# Data Augmentation
+augmentation:
+  random_flip: true
+  random_rotation: true
+  rotation_degrees: 15
+
+# Loss Function
+loss:
+  type: combined
+  ce_weight: 0.5
+  dice_weight: 0.5
+
+# Checkpointing
+checkpoint:
+  save_dir: ./checkpoints
+  save_freq: 10
+  save_best: true
+  monitor: val_miou
+  mode: max
+
+# Hardware
+hardware:
+  num_workers: 4
+  pin_memory: true
+  mixed_precision: true
