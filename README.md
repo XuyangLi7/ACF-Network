@@ -29,7 +29,7 @@ conda activate acf
 pip install -r requirements.txt
 
 # Download pretrained weights (optional)
-python acf/pretrained.py --download R50-ViT-B_16
+python acf/pretrained.py 
 ```
 
 ## 📊 Supported Datasets
@@ -73,7 +73,7 @@ python train.py \
     --output_dir ./checkpoints \
     --epochs 100 \
     --batch_size 8 \
-    --pretrained R50-ViT-B_16
+    --pretrained 
 ```
 
 ### Evaluation
@@ -98,7 +98,7 @@ python visualize.py \
 ## 🎯 Pretrained Backbones
 
 Available pretrained models:
-- R50-ViT-B_16 (98.6M params) - Recommended
+- R50-ViT-B_16 (98.6M params) 
 - ViT-B_16/32 (86-88M params)
 - ViT-L_16/32 (307M params)
 - ViT-H_14 (632M params)
@@ -108,11 +108,11 @@ Download: `python acf/pretrained.py --download <model_name>`
 ## 📝 Citation
 
 ```bibtex
-@article{acf2024,
+@article{acf2026,
   title={ACF Network: Adaptive Collaborative Framework for Multi-Modal Remote Sensing Image Segmentation},
   author={Your Name},
   journal={Your Journal},
-  year={2024}
+  year={2026}
 }
 ```
 
