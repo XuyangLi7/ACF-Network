@@ -60,7 +60,7 @@ ACF Network consists of 5 core modules:
 1. **Hierarchical Tokenizer (HT)**: Multi-scale patch embedding
 2. **Cross-Modal Attention (CMA)**: Bidirectional modality interaction
 3. **Adaptive Modality Balancing (AMB)**: Dynamic modality weighting
-4. **Multi-Granularity Collaborative Fusion (MGCF)**: Hierarchical feature fusion
+4. **Hierarchical Scale Consistency Fusion (HSCF)**: Hierarchical feature fusion
 5. **Spatial-Channel Adaptive Fusion (SCAF)**: Dual-branch attention
 
 ## 🚀 Usage
@@ -71,7 +71,7 @@ python train.py \
     --dataset vaihingen \
     --data_path ./data \
     --output_dir ./checkpoints \
-    --epochs 100 \
+    --epochs 180 \
     --batch_size 8 \
     --pretrained 
 ```
@@ -85,15 +85,7 @@ python evaluate.py \
     --output_dir ./results
 ```
 
-### Visualization
-```bash
-python visualize.py \
-    --dataset vaihingen \
-    --checkpoint checkpoints/best_model.pth \
-    --data_root ./data \
-    --save_dir ./visualizations \
-    --vis_types all
-```
+
 
 ## 🎯 Pretrained Backbones
 
